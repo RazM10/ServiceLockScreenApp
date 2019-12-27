@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -14,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btn_play, btn_stop;
 
+    String TAG="checkClicked";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,5 +51,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            mediaPlayer.pause();
 //            Toast.makeText(this, "Stop Button Clicked", Toast.LENGTH_SHORT).show();
 //        }
+    }
+
+//    @Override
+//    public void onAttachedToWindow() {
+//        super.onAttachedToWindow();
+//        this.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
+//    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode== KeyEvent.KEYCODE_VOLUME_UP){
+            Log.d(TAG,"Volume Up Button Clicked: "+keyCode);
+        }
+        else if(keyCode==KeyEvent.KEYCODE_BACK){
+            Log.d(TAG,"Back Button Clicked:"+keyCode);
+        }
+        return false;
     }
 }
