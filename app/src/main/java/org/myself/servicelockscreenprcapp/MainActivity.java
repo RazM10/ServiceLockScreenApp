@@ -71,4 +71,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return false;
     }
+
+    @Override
+    protected void onDestroy() {
+        stopService(new Intent(this, MyService.class));
+        super.onDestroy();
+    }
 }
