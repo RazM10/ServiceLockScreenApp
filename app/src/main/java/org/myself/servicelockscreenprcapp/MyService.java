@@ -37,7 +37,8 @@ public class MyService extends Service {
     public void onDestroy() {
         super.onDestroy();
         Log.d(TAG,"onDestroy called");
-        Intent intent=new Intent(this,MyReceiver.class);
-        sendBroadcast(intent);
+//        Intent intent=new Intent(this,MyReceiver.class);
+//        sendBroadcast(intent);
+        mediaPlayer.stop();
     }
 }
