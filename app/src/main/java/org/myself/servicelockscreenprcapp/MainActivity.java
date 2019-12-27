@@ -28,14 +28,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_stop.setOnClickListener(this);
     }
 
-    public void onClick(View view){
-        if(view==btn_play){
-            mediaPlayer.start();
-            Toast.makeText(this, "Play Button Clicked", Toast.LENGTH_SHORT).show();
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_play:
+                mediaPlayer.start();
+                Toast.makeText(this, "Play Button Clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btn_stop:
+                mediaPlayer.pause();
+                Toast.makeText(this, "Pause Button Clicked", Toast.LENGTH_SHORT).show();
+                break;
         }
-        else if(view==btn_stop){
-            mediaPlayer.pause();
-            Toast.makeText(this, "Stop Button Clicked", Toast.LENGTH_SHORT).show();
-        }
+//        if(view==btn_play){
+//            mediaPlayer.start();
+//            Toast.makeText(this, "Play Button Clicked", Toast.LENGTH_SHORT).show();
+//        }
+//        else if(view==btn_stop){
+//            mediaPlayer.pause();
+//            Toast.makeText(this, "Stop Button Clicked", Toast.LENGTH_SHORT).show();
+//        }
     }
 }
