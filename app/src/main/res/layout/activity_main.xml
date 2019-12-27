@@ -9,6 +9,7 @@
 
 
     <LinearLayout
+        android:id="@+id/layout_musicButtons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
@@ -22,6 +23,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Stop Music"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_serviceButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_musicButtons"
+        android:layout_centerHorizontal="true">
+        <Button
+            android:id="@+id/btn_startService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Service"/>
+        <Button
+            android:id="@+id/btn_stopService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop Service"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_lockButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_serviceButtons"
+        android:layout_centerHorizontal="true">
+        <Button
+            android:id="@+id/btn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"/>
+        <Button
+            android:id="@+id/btn_lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"/>
     </LinearLayout>
 
 </RelativeLayout>
